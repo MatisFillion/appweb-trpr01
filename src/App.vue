@@ -29,6 +29,9 @@ const newProduct = reactive<Hams>({
 });
 
 const handleModifyProduct = (product: Hams) => {
+    if (!newProduct.name.trim() || !newProduct.description.trim() || newProduct.price <= 0) {
+    return;
+    }
   editProduct({
     ...product,
     name: newProduct.name,
@@ -104,10 +107,10 @@ const exportToCSV = () => {
   <!--Form fait par ChatGPT-->
   <div class="container mt-4 w-50">
     <div class="d-flex align-items-center">
-        <img class="img-fluid d-none d-lg-block" src="../public/tierDeJambon.png"
+        <img class="img-fluid d-none d-lg-block" src="../src/assets/images/tierDeJambon.png"
         alt="Tier de Jambons">
         <h2 class="mb-3">Ajouter un tier de jambon</h2>
-        <img class="img-fluid d-none d-lg-block" src="../public/tierDeJambonMirrored.png"
+        <img class="img-fluid d-none d-lg-block" src="../src/assets/images/tierDeJambonMirrored.png"
         alt="Tier de Jambons">
     </div>
 
@@ -209,19 +212,19 @@ const exportToCSV = () => {
         <div class="d-flex justify-content-around">
           <button
             class="btn btn-outline-warning w-100 mx-1"
-            @click="handleModifyProduct(product)"
+            @click.stop="handleModifyProduct(product)"
           >
             <i class="bi bi-pen"></i>
           </button>
           <button
             class="btn btn-outline-primary w-100 mx-1"
-            @click="handleDuplicateProduct(product)"
+            @click.stop="handleDuplicateProduct(product)"
           >
             <i class="bi bi-copy"></i>
           </button>
           <button
             class="btn btn-outline-danger w-100 mx-1"
-            @click="deleteProduct(product.id)"
+            @click.stop="deleteProduct(product.id)"
           >
             <i class="bi bi-trash"></i>
           </button>
