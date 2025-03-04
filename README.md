@@ -7,4 +7,4 @@ Learn more about the recommended Project Setup and IDE Support in the [Vue Docs 
 
 Voici un site web d'achat de tier de jambons (Et oui, l'inflation frappe vraiement partout!).
 
-Le form en soit (les champs et légèrement le style), l'exportation en CSV et une petite partie du style à été faite par ChatGPT. 
+Le form en soit (les champs et légèrement le style), l'exportation en CSV et une petite partie du style à été faite par ChatGPT.
