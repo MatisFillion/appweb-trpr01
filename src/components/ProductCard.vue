@@ -47,22 +47,22 @@ const cancelEdit = () => {
   </div>
 
   <div class="d-flex justify-content-around">
-    <button class="btn btn-outline-warning w-100 mx-1" @click.stop="isEditing = true" v-if="!isEditing">
-      <i class="bi bi-pen"></i>
+    <button class="btn btn-outline-warning btn-sm w-100 mx-1" @click.stop="isEditing = true" v-if="!isEditing">
+      <i class="bi bi-pen"></i> Modifier
     </button>
     <template v-if="isEditing">
       <button class="btn btn-outline-success w-100 mx-1" @click.stop="saveChanges">
-        <i class="bi bi-check"></i>
+        <i class="bi bi-check2"></i>
       </button>
       <button class="btn btn-outline-secondary w-100 mx-1" @click.stop="cancelEdit">
-        <i class="bi bi-x"></i>
+        <i class="bi bi-x-lg"></i>
       </button>
     </template>
-    <button class="btn btn-outline-primary w-100 mx-1" @click.stop="emit('duplicate', product)" v-if="!isEditing">
-      <i class="bi bi-copy"></i>
+    <button class="btn btn-outline-primary btn-sm w-100 mx-1" @click.stop="emit('duplicate', product)" v-if="!isEditing">
+      <i class="bi bi-copy"></i> Dupliquer
     </button>
-    <button class="btn btn-outline-danger w-100 mx-1" @click.stop="emit('delete', product.id)" v-if="!isEditing">
-      <i class="bi bi-trash"></i>
+    <button class="btn btn-outline-danger btn-sm w-100 mx-1" @click.stop="emit('delete', product.id)" v-if="!isEditing">
+      <i class="bi bi-trash"></i> Supprimer
     </button>
   </div>
 </div>

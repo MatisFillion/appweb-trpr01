@@ -30,7 +30,13 @@ const handleAddProduct = () => {
 
 <template>
   <div class="container mt-4 w-50">
-    <h2 class="mb-3">Ajouter un produit</h2>
+    <div class="d-inline d-flex align-items-center justify-content-center">
+    <img class="img-fluid d-none d-lg-block" src="../assets/images/tierDeJambon.png"
+    alt="Logo tier de jambons">
+    <h2 class="mb-3 mx-3">Ajouter un produit</h2>
+    <img class="img-fluid d-none d-lg-block" src="../assets/images/tierDeJambonMirrored.png"
+    alt="Logo tier de jambons inversé sur l'axe des y">
+</div>
     <form @submit.prevent="handleAddProduct">
       <div class="mb-3">
         <label class="form-label">Nom:</label>
@@ -52,7 +58,7 @@ const handleAddProduct = () => {
         <input v-model.number="newProduct.quantity" type="number" class="form-control" required />
       </div>
 
-      <button type="submit" class="btn btn-outline-success" @Click="handleAddProduct">Ajouter le produit</button>
+      <button type="submit" class="btn btn-outline-success" @Click="handleAddProduct"><i class="bi bi-plus-lg"></i> Ajouter</button>
     </form>
   </div>
 </template>

@@ -28,6 +28,6 @@ const exportToCSV = () => {
 
 <template>
   <button @click="exportToCSV" class="btn btn-outline-info mt-3">
-    Télécharger la liste en CSV
+    <i class="bi bi-download"></i> Exporter
   </button>
 </template>
