@@ -21,7 +21,9 @@ const cancelEdit = () => {
 </script>
 
 <template>
-  <div class="card p-2 text-center shadow-sm col-3" style="width: 18rem; cursor: pointer" @click="showMore = !showMore">
+  <!-- @click="isEditing ? null : showMore = !showMore" fait par chatGPT (seulement cette partie: "isEditing ? null : "),
+    j'avais  @click="showMore = !showMore" avant, mais je ne voulait pas que modifier active toggleshowMore-->
+  <div class="card p-2 text-center shadow-sm col-3" style="width: 18rem; cursor: pointer" @click="isEditing ? null : showMore = !showMore">
   <div class="card-body">
     <template v-if="isEditing">
       <input v-model="editedProduct.name" class="form-control mb-2" />
