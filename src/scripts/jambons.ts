@@ -8,6 +8,7 @@ export interface Hams {
     quantity: number;
   }
 
+  //Liste peuplé par ChatGPT
   export const products = ref<Hams[]>([
     { id: crypto.randomUUID(), name: "Le tier du jambon de Parme", description: "Affiné 24 mois", price: 15, quantity: 0 },
     { id: crypto.randomUUID(), name: "Le tier du jambon Serrano", description: "Savoureux et tendre", price: 12, quantity: 5 },
