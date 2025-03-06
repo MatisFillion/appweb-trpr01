@@ -4,18 +4,17 @@ import type { Hams } from "../scripts/jambons";
 
 const props = defineProps<{ products: Hams[] }>();
 
-//Export to CSV fait par ChatGPT
+//Fonctinalité du export to CSV fait par ChatGPT (J'ai apporté quelque modifications)
 const exportToCSV = () => {
   const csvContent = [
-    ["ID", "Nom", "Description", "Prix", "Quantité"],
     ...props.products.map(product => [
-      product.id,
-      product.name,
-      product.description,
-      product.price,
-      product.quantity
+      "ID: " + product.id,
+      "Nom: " + product.name,
+      "Description:" + product.description,
+      "Prix: " + product.price,
+      "Quantité: " + product.quantity
     ])
-  ].map(e => e.join(",")).join("\n");
+  ].map(e => e.join(", ")).join("\n");
 
   const blob = new Blob([csvContent], { type: "text/csv" });
   const url = URL.createObjectURL(blob);

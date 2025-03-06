@@ -1,5 +1,4 @@
 <script setup lang="ts">
-//Why is he not seeing it?
 import ProductForm from "./components/ProductForm.vue";
 import ProductSearch from "./components/ProductSearch.vue";
 import ProductList from "./components/ProductList.vue";
@@ -65,33 +64,6 @@ const filteredProducts = computed(() => {
     );
   });
 });
-
-// Exportation CSV fait par ChatGPT
-const exportToCSV = () => {
-  const csvContent = [
-    ["ID", "Nom", "Description", "Prix", "Quantité"], // En-tête du fichier CSV
-    ...products.value.map(product => [
-      product.id,
-      product.name,
-      product.description,
-      product.price,
-      product.quantity
-    ])
-  ].map(e => e.join(",")).join("\n");
-
-  // Créer un Blob contenant le CSV
-  const blob = new Blob([csvContent], { type: "text/csv" });
-  const url = URL.createObjectURL(blob);
-
-  // Créer un lien de téléchargement
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "produits.csv"; // Nom du fichier
-  a.click();
-
-  // Nettoyer l'URL après le téléchargement
-  URL.revokeObjectURL(url);
-};
 </script>
 
 <template>
